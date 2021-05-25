@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Navbar from './pages/components/Navbar';
+import Home from './pages/Home';
+import MeuPerfil from './pages/MeuPerfil';
+import Carrinho from './pages/Carrinho';
+import Rodape from './pages/components/Rodape';
+//---------------------------------------------------------
+import 'primereact/resources/themes/saga-blue/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <Router>
+          <Navbar />
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path= '/perfil' component= {MeuPerfil} />
+            <Route path='/carrinho' component = {Carrinho} />
+          </Switch>
+          <Rodape />
+        </Router>
+      </div>
+    )
+  }
 }
 
-export default App;

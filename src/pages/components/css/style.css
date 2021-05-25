@@ -1,0 +1,21 @@
+#container-produto, #containerCarrinho, #perfilContainer{
+  margin: 100px auto;
+}
+
+/*Carrinho*/
+#containerCarrinho table{
+  border: 1px solid black;
+  border-radius:20px;
+}
+#containerCarrinho table tr{
+  border-bottom: 1px solid;
+}
+
+.button {
+  background-color:  #007BBF;
+  border-radius:20px;
+  border:0px;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+}

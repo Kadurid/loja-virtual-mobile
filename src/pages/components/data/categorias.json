@@ -1,0 +1,39 @@
+{
+  "categorias":[
+      {
+        "id": "1",
+        "label": "informatica",
+        "descricao":"Informática"
+    },
+    {
+        "id": "2",
+        "label": "livros",
+        "descricao": "Livros"
+    },
+    {
+        "id": "3",
+        "label": "decoracao",
+        "descricao": "Decoração"
+    },
+    {
+        "id": "4",
+        "label": "eletrodomesticos",
+        "descricao": "Eletrodomésticos"
+    },
+    {
+        "id": "5",
+        "label": "tv-audio",
+        "descricao": "TV e áudio"
+    },
+    {
+        "id": "6",
+        "label": "eletroportateis",
+        "descricao": "Eletroportáteis"
+    },
+    {
+        "id": "7",
+        "label": "brinquedos",
+        "descricao": "Brinquedos"
+    }
+  ]
+}
