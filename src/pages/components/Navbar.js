@@ -26,9 +26,14 @@ class Navbar extends React.Component{
                 <InputText id="in" />
                 <label htmlFor='in'>Pesquise aqui</label>
               </span>
+              
+            </div>
+            <div className='col-4 shopping-col align-self-end'>
+              <i className="pi pi-shopping-cart" />
             </div>
           </div>
         </div>
+          
     
         <nav className={this.state.sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className= 'nav-menu-items' onClick={()=> this.setState({sidebar: !this.state.sidebar})}>

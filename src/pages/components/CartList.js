@@ -17,6 +17,8 @@ class CartList extends React.Component{
   handleConfirmaCompra(){
     if(carrinho.length!==0){
       compra.push(carrinho);
+      carrinho.pop(carrinho);
+      this.total =0;
       alert("Parabéns, compra efetuada com sucesso!!");
     }
     else{
@@ -37,7 +39,7 @@ class CartList extends React.Component{
                     {carrinho.map((data,key) => { 
                         
                         return(
-                            <tr key={key}>
+                            <tr key={key}> 
                                 <td>{data.descricao}</td>
                                 <td>R${data.valor}</td>
                             </tr>
