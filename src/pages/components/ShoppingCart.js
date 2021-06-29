@@ -1,36 +1,11 @@
 import React, { Component } from 'react'
 import './css/style.css';
-import {carrinho} from './data/carrinho.json'
 
 export default class ShoppingCart extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      cartItems : []
-    }
+    console.log(props);
    
-  }
-  
-  onAdd(product){
-    const exist = carrinho.find(x => x.id === product.id);
-    if(exist){
-      product.qtd = product.qtd +1;
-    }
-    else {
-      product["qtd"] = 1;
-      carrinho.push(product);
-      this.state.cartItems.push(product);  
-      console.log(this.state.cartItems)   
-    }
-    
-  }
-  onRemove(product){
-    const exist = carrinho.find((x) => x.id === product.id);
-    if(exist.qtd ===1){
-      carrinho.pop(carrinho.filter((x) => x.id !== product.id));
-    } else{
-      product.qtd = product.qtd - 1;
-    }
   }
 
   render() {
@@ -38,8 +13,8 @@ export default class ShoppingCart extends Component {
       <div className="block col-1 carrinho-novo">
         <h2 className="nav-text ">Cart Items</h2>
         <div>
-          {carrinho.length === 0 && <div >Cart Is Empty</div>}
-          {carrinho.map((item) => (
+          {this.cartItems.length === 0 && <div >Cart Is Empty</div>}
+          {this.cartItems.map((item) => (
             <div key={item.id} className="row">
               <div className="col-2">{item.descricao.substr(0, 9)}</div>
               <div className="col-2">

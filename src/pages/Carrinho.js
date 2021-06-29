@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
-import CartList from './components/CartList'
+import ShoppingCart from './components/ShoppingCart';
+import './components/css/style.css';
+import {carrinho} from './components/data/carrinho.json'
 
 export default class Carrinho extends Component {
+  constructor(props){
+    super(props);
+  }
   render() {
     return (
       <div>
-        <CartList />
+        <ShoppingCart cart={carrinho}/>
       </div>
     )
   }
