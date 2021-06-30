@@ -4,8 +4,10 @@ import './css/style.css';
 export default class ShoppingCart extends Component {
   constructor(props){
     super(props);
-    console.log(props);
-   
+    const {cartItems} = props;
+    this.cartItems = cartItems;
+    this.onAdd = props.onAdd;
+    this.onRemove = props.onRemove;
   }
 
   render() {

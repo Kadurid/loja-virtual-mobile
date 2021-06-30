@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Navbar from './pages/components/Navbar';
-import Home from './pages/Home';
+import {produtos} from './pages/components/data/produtos.json'
+import ProductSlider from './pages/components/ProductSlider'
 import MeuPerfil from './pages/MeuPerfil';
 import ShoppingCart from './pages/components/ShoppingCart';
 //---------------------------------------------------------
@@ -17,6 +18,7 @@ export default class App extends Component {
     }
    this.onAdd = this.onAdd.bind(this);
    this.onRemove = this.onRemove.bind(this);
+   console.log(this.state.cartItems);
   }
   
   onAdd(product){
@@ -46,10 +48,12 @@ export default class App extends Component {
       <div>
         <Router>
           <Switch>
-            <Route path='/' exact component={Home} />
-            <Route path= '/perfil' component= {MeuPerfil} />
-            <Route path='/carrinho'>
-              <ShoppingCart cartItems={this.state.cartItems}/>
+            <Route exact path='/'>
+              <ProductSlider produtos={produtos} cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove}/>
+            </Route>
+            <Route exact path= '/perfil' component= {MeuPerfil} />
+            <Route exact path='/carrinho'>
+              <ShoppingCart cartItems={this.state.cartItems} onAdd={this.onAdd} onRemove={this.onRemove}/>
             </Route>
           </Switch>
           <Navbar />

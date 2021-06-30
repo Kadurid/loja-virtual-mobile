@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { Carousel } from 'primereact/carousel';
 import './css/Produto.css';
 import './css/style.css';
-import ShoppingCart from './ShoppingCart';
 
 export default class ProductSlider extends Component {
   constructor(props){
     super(props);
-    this.controller = new ShoppingCart();
+    this.onAdd = props.onAdd;
+    this.onRemove = props.onRemove;
     this.produtos = props.produtos;
     this.state = {
       products: []
@@ -41,7 +41,7 @@ export default class ProductSlider extends Component {
                         <b>Valor:R${data.valor}<br/><br/></b>
                         <div className="text-center">
                           <button className="btn btn-primary" 
-                          onClick={() => { this.controller.onAdd(data)}}>
+                          onClick={() => { this.onAdd(data)}}>
                             Comprar</button>
                         </div>
                     </footer>
