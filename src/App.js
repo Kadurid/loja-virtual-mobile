@@ -37,7 +37,9 @@ export default class App extends Component {
   onRemove(product){
     const exist = this.state.cartItems.find((x) => x.id === product.id);
     if(exist.qtd ===1){
-      this.state.cartItems.filter((x) => x.id !== product.id);
+      this.setState({
+        cartItems: this.state.cartItems.filter((x) => x.id !== product.id)
+      });
     } else{
       product.qtd = product.qtd - 1;
     }
